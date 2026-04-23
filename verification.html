@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCE Academy | Verificación de Certificados</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> <!-- Para firmas estilizadas -->
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/certificate.css">
+
+    <!-- External Libraries -->
+    <!-- QRious for QR Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <!-- html2pdf for PDF Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Header simple -->
+    <header id="main-header" class="static-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="./index.html"><img src="./assets/kce-academy-logo.jpeg" alt="KCE Academy Logo" class="logo-img"></a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="./index.html">Volver al Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="verification-main">
+        <!-- Panel de Búsqueda -->
+        <section id="search-panel" class="container verification-search">
+            <div class="search-box">
+                <h2>Verificación Digital</h2>
+                <p>Ingrese el ID único del certificado para verificar su validez o descargar una copia.</p>
+                <form id="verify-form" class="verify-form">
+                    <input type="text" id="cert-id-input" placeholder="Ej: KCE-2026-0001" required>
+                    <button type="submit" class="btn btn-primary">Verificar</button>
+                </form>
+                <div id="error-message" class="error-message" style="display: none;">
+                    Certificado no encontrado. Por favor, revise el ID e intente nuevamente.
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de Resultados (Oculto por defecto) -->
+        <section id="result-panel" class="container verification-result" style="display: none;">
+            <div class="result-actions">
+                <button id="btn-download" class="btn btn-secondary">Descargar en PDF</button>
+                <button id="btn-new-search" class="btn btn-primary">Nueva Búsqueda</button>
+            </div>
+            
+            <div class="certificate-wrapper">
+                <!-- Certificado real a renderizar -->
+                <div id="certificate-container" class="certificate-layout">
+                    <div class="cert-border">
+                        <div class="cert-header">
+                            <img src="./assets/kce-academy-logo.jpeg" alt="KCE Academy Logo" class="cert-logo">
+                            <div class="qr-container">
+                                <canvas id="qr-code"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="cert-body">
+                            <h2 class="cert-title" id="render-type">Certificado de Aprobación</h2>
+                            <p class="cert-presents">Se otorga el presente documento a:</p>
+                            <h3 class="cert-student" id="render-student">Nombre del Estudiante</h3>
+                            <p class="cert-reason">Por haber completado satisfactoriamente el programa:</p>
+                            <h4 class="cert-course" id="render-course">Nombre del Curso</h4>
+                            <p class="cert-duration">con una duración total de <strong id="render-hours">00</strong> horas académicas.</p>
+                            <p class="cert-meta-body">Emitido el <strong id="render-date">YYYY-MM-DD</strong> bajo el registro único <strong id="render-id">KCE-XXXX-XXXX</strong>.</p>
+                        </div>
+
+                        <div class="cert-footer">
+                            <div class="cert-signature-area">
+                                <div class="signature-font" id="render-instructor-sig">Firma Instructor</div>
+                                <div class="signature-line"></div>
+                                <p class="instructor-name" id="render-instructor-name">Nombre Instructor</p>
+                                <p class="instructor-role" id="render-instructor-role">Rol Instructor</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Marca de agua de fondo -->
+                        <div class="cert-watermark">KCE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./assets/kce-academy-logo.jpeg" alt="KCE Academy Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <p>&copy; <span id="current-year"></span> KCE Academy. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS específico -->
+    <script src="./js/verification.js"></script>
+    <!-- Para año del footer -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

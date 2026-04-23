@@ -1,0 +1,18 @@
+[
+  {
+    "id": "KCE-2026-0001",
+    "student_name": "Ejemplo Estudiante",
+    "course_id": "crs_001",
+    "instructor_id": "inst_001",
+    "type": "aprobacion",
+    "issue_date": "2026-04-20"
+  },
+  {
+    "id": "KCE-2026-0002",
+    "student_name": "María González",
+    "course_id": "crs_003",
+    "instructor_id": "inst_001",
+    "type": "participacion",
+    "issue_date": "2026-04-22"
+  }
+]

@@ -1,0 +1,6 @@
+[
+  { "id": "crs_001", "title": "Programación con Python para la Inteligencia Artificial", "hours": 40 },
+  { "id": "crs_002", "title": "Programa avanzado en Ingeniería Matemática y Computacional para la Inteligencia Artificial", "hours": 120 },
+  { "id": "crs_003", "title": "Inteligencia Artificial Aplicada a la Gestión Profesional", "hours": 20 },
+  { "id": "crs_004", "title": "Seminario de Inteligencia Artificial para la Optimización de Procesos Comerciales", "hours": 8 }
+]
