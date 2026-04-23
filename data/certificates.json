@@ -1,18 +1,100 @@
 [
   {
     "id": "KCE-2026-0001",
-    "student_name": "Ejemplo Estudiante",
+    "student_id": "std_001",
     "course_id": "crs_001",
-    "instructor_id": "inst_001",
     "type": "aprobacion",
-    "issue_date": "2026-04-20"
+    "issue_date": "2026-03-13"
   },
   {
     "id": "KCE-2026-0002",
-    "student_name": "María González",
-    "course_id": "crs_003",
-    "instructor_id": "inst_001",
+    "student_id": "std_002",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0003",
+    "student_id": "std_003",
+    "course_id": "crs_001",
     "type": "participacion",
-    "issue_date": "2026-04-22"
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0004",
+    "student_id": "std_004",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0005",
+    "student_id": "std_005",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0006",
+    "student_id": "std_006",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0007",
+    "student_id": "std_007",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0008",
+    "student_id": "std_008",
+    "course_id": "crs_001",
+    "type": "participacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0009",
+    "student_id": "std_009",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0010",
+    "student_id": "std_010",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0011",
+    "student_id": "std_011",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0012",
+    "student_id": "std_012",
+    "course_id": "crs_001",
+    "type": "participacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0013",
+    "student_id": "std_013",
+    "course_id": "crs_001",
+    "type": "aprobacion",
+    "issue_date": "2026-03-13"
+  },
+  {
+    "id": "KCE-2026-0014",
+    "student_id": "std_014",
+    "course_id": "crs_001",
+    "type": "participacion",
+    "issue_date": "2026-03-13"
   }
 ]

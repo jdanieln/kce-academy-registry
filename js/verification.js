@@ -55,15 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
     async function verifyCertificate(id) {
         try {
             // Load DBs
-            const [certsRes, coursesRes, instRes] = await Promise.all([
+            const [certsRes, coursesRes, instRes, stdRes] = await Promise.all([
                 fetch('./data/certificates.json'),
                 fetch('./data/courses.json'),
-                fetch('./data/instructors.json')
+                fetch('./data/instructors.json'),
+                fetch('./data/students.json')
             ]);
 
             const certificates = await certsRes.json();
             const courses = await coursesRes.json();
             const instructors = await instRes.json();
+            const students = await stdRes.json();
 
             // Find Cert
             const cert = certificates.find(c => c.id === id);
@@ -76,14 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Find Relations
+            const student = students.find(s => s.id === cert.student_id);
             const course = courses.find(c => c.id === cert.course_id);
-            const instructor = instructors.find(i => i.id === cert.instructor_id);
+            const instructor = instructors.find(i => i.id === (cert.instructor_id || 'inst_001'));
 
-            if (!course || !instructor) {
+            if (!student || !course || !instructor) {
                 throw new Error("Datos relacionales incompletos en la base de datos.");
             }
 
-            renderCertificate(cert, course, instructor);
+            renderCertificate(cert, course, instructor, student);
 
             searchPanel.style.display = 'none';
             resultPanel.style.display = 'block';
@@ -97,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function renderCertificate(cert, course, instructor) {
+    function renderCertificate(cert, course, instructor, student) {
         // Theme
         certContainer.setAttribute('data-type', cert.type);
         
         // Texts
         renderType.textContent = cert.type === 'aprobacion' ? 'Certificado de Aprobación' : 'Certificado de Participación';
-        renderStudent.textContent = cert.student_name;
+        renderStudent.textContent = student.name;
         renderCourse.textContent = course.title;
         renderHours.textContent = course.hours;
         
